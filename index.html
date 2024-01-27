@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-time Task Management</title>
+
+    <script src="https://www.gstatic.com/firebasejs/9.6.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.8/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.8/firebase-firestore.js"></script>
+
+    <script>
+
+      import { initializeApp } from "firebase/app";
+      import { getAnalytics } from "firebase/analytics";
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyCTnwNHjqYGZ0Eqw5kW-9Fk5UqFKMAE5VE",
+        authDomain: "project-1-cb3d9.firebaseapp.com",
+        projectId: "project-1-cb3d9",
+        storageBucket: "project-1-cb3d9.appspot.com",
+        messagingSenderId: "1065904048676",
+        appId: "1:1065904048676:web:a58cddd39cafb72d28e6b1",
+        measurementId: "G-BTFL4HQM5G"
+      };
+
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
+    </script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <div id="auth-section">
+        <h2>User Authentication</h2>
+        <input type="email" id="email" placeholder="Email">
+        <input type="password" id="password" placeholder="Password">
+        <button onclick="login()">Login</button>
+        <button onclick="register()">Register</button>
+        <button onclick="resetPassword()">Reset Password</button>
+    </div>
+
+
+    <div id="task-section" style="display: none;">
+        <h2>Task Management</h2>
+        <input type="text" id="task-title" placeholder="Task Title">
+        <textarea id="task-description" placeholder="Task Description"></textarea>
+        <input type="date" id="due-date">
+        <button onclick="createTask()">Create Task</button>
+        <ul id="task-list"></ul>
+    </div>
+   </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
