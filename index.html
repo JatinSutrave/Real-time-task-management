@@ -11,9 +11,6 @@
 
     <script>
 
-      import { initializeApp } from "firebase/app";
-      import { getAnalytics } from "firebase/analytics";
-
       const firebaseConfig = {
         apiKey: "AIzaSyCTnwNHjqYGZ0Eqw5kW-9Fk5UqFKMAE5VE",
         authDomain: "project-1-cb3d9.firebaseapp.com",
@@ -24,8 +21,7 @@
         measurementId: "G-BTFL4HQM5G"
       };
 
-      const app = initializeApp(firebaseConfig);
-      const analytics = getAnalytics(app);
+    firebase.initializeApp(firebaseConfig);
     </script>
     <link rel="stylesheet" href="styles.css">
 </head>
